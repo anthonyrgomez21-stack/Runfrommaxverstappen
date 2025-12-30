@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>RUN FROM FRANZ</title>
+  <meta name="description" content="A meme endless runner: dodge obstacles, survive, and don't let Franz Hermann catch you." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">RF</div>
+      <div class="title">
+        <div class="name">RUN FROM FRANZ</div>
+        <div class="tagline">You weren’t supposed to see him.</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="index.html" class="active">Play</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="gameCard">
+      <div class="hud">
+        <div class="hudLeft">
+          <div class="pill">Time: <span id="timeEl">0.0</span>s</div>
+          <div class="pill">Best: <span id="bestEl">0.0</span>s</div>
+        </div>
+        <div class="hudRight">
+          <button id="pauseBtn" class="btn">Pause</button>
+          <button id="muteBtn" class="btn">Sound: On</button>
+        </div>
+      </div>
+
+      <div class="canvasWrap">
+        <canvas id="game" width="420" height="720" aria-label="Game canvas"></canvas>
+
+        <!-- Touch controls (mobile) -->
+        <div class="touchControls" id="touchControls" aria-hidden="true">
+          <button class="touchBtn" id="leftBtn">◀</button>
+          <button class="touchBtn" id="rightBtn">▶</button>
+        </div>
+
+        <!-- Overlay screens -->
+        <div class="overlay" id="overlay">
+          <div class="panel">
+            <div class="panelTitle" id="overlayTitle">RUN FROM FRANZ</div>
+            <div class="panelText" id="overlayText">
+              Dodge the obstacles. Survive as long as possible.<br/>
+              If Franz catches you… it’s over.
+            </div>
+
+            <div class="panelControls">
+              <button id="startBtn" class="btn primary">Start</button>
+              <button id="howBtn" class="btn">How to play</button>
+            </div>
+
+            <div class="panelSmall" id="overlaySmall">
+              Desktop: ← → or A/D • Pause: P • Restart: R<br/>
+              Mobile: tap buttons or tap left/right side of screen
+            </div>
+
+            <div class="panelFooter">
+              <span class="tiny">Parody fan game. Not affiliated with Formula 1® or any driver.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating meme events -->
+        <div class="toast" id="toast"></div>
+      </div>
+
+      <div class="below">
+        <div class="instructions">
+          <strong>Goal:</strong> survive. <strong>Controls:</strong> left/right. <strong>Tip:</strong> stay calm when the engine gets louder.
+        </div>
+
+        <!-- Optional ad slot (keep disabled until approved)
+        <div class="adSlot" aria-label="Advertisement">
+          Ad goes here
+        </div>
+        -->
+      </div>
+    </section>
+
+    <section class="side">
+      <div class="sideCard">
+        <h2>What is this?</h2>
+        <p>
+          A tiny meme runner. Franz Hermann is behind you. The longer you survive, the faster it gets.
+        </p>
+        <p class="muted">
+          Built for short-form clips. If you want, we’ll add: leaderboards, skins, and “events”.
+        </p>
+      </div>
+
+      <div class="sideCard">
+        <h2>Share bait</h2>
+        <ul>
+          <li>“POV: Franz notices you.”</li>
+          <li>“How long can YOU last?”</li>
+          <li>“He usually catches people in 32s.”</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footerLinks">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="tiny">© <span id="year"></span> RUN FROM FRANZ</div>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
